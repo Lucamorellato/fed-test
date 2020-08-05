@@ -26,9 +26,12 @@
 }
 #q4Wrapper footer {
   margin-top: 10px;
-  padding: 10px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
+
 #q4Wrapper article {
   text-align: center;
 }
@@ -41,9 +44,10 @@
   color: white;
   transition: transform 0.3s ease;
 }
-#q4Wrapper a:hover {
+#q4Wrapper a:hover, #q4Wrapper a:focus {
   transform: scale(1.05);
 }
+
 #q4Wrapper a span {
   opacity: 0.5;
 }
@@ -60,5 +64,22 @@
 
 /* Begin styling the report items here! */
 .reports {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  grid-gap: 30px;
+  justify-content: center;
+}
 
+/* Media Query */
+
+@media only screen and (max-width: 768px) {
+  .reports  {
+     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .reports  {
+     grid-template-columns: repeat(1, 1fr);
+  }
 }
